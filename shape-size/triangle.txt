@@ -1,0 +1,48 @@
+def expo(num,time):
+    if time == 1:
+        return num
+    else:
+        y = num
+        for i in range(1,time):
+           num *= y
+        return num
+        
+def fac(num):
+    if num < 0:
+        return None
+    elif num == 0:
+        return 1
+    else:
+        x=1
+        for i in range(1,num+1):
+          x *= i
+        return x
+    
+def dev(fri,sec):
+    return fri / sec
+
+def sin(angle):
+    list1 = dev(expo(angle,1),fac(1))
+    list2 = dev(expo(angle,3),fac(3))
+    list3 = dev(expo(angle,5),fac(5))
+    list4 = dev(expo(angle,7),fac(7))
+    list5 = dev(expo(angle,9),fac(9))
+    list6 = dev(expo(angle,11),fac(11))
+    list7 = dev(expo(angle,13),fac(13))
+    list8 = dev(expo(angle,15),fac(15))
+    list9 = dev(expo(angle,17),fac(17))
+    list10 = dev(expo(angle,19),fac(19))
+    list11 = dev(expo(angle,21),fac(21))
+    list12 = dev(expo(angle,23),fac(23))
+    list13 = dev(expo(angle,25),fac(25))
+    list14 = dev(expo(angle,27),fac(27))
+    list15 = dev(expo(angle,29),fac(29))
+    list16 = dev(expo(angle,31),fac(31))
+    list17 = dev(expo(angle,33),fac(33))
+    list18 = dev(expo(angle,35),fac(35))
+    list19 = dev(expo(angle,37),fac(37))
+    plus = list1 + list3 + list5 + list7 + list9 + list11 + list13 + list15 + list17 + list19
+    minus = list2 + list4 + list6 + list8 + list10 + list12 + list14 + list16 + list18
+    return plus - minus
+    
+
