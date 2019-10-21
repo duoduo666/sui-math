@@ -50,34 +50,13 @@ def m_plus(num):
         return num
 #分解质因数
 def dec(num):
-    dec = [ ]
-    while num % 2 == 0:
-       dec.append(2)
-       num /= 2
-    while num % 3 == 0:
-       dec.append(3)
-       num /= 3
-    while num % 5 == 0:
-       dec.append(5)
-       num /= 5
-    while num % 7 == 0:
-       dec.append(7)
-       num /= 7
-    while num % 11 == 0:
-       dec.append(11)
-       num /= 11
-    while num % 13 == 0:
-       dec.append(13)
-       num /= 13
-    while num % 17 == 0:
-       dec.append(17)
-       num /= 17
-    while num % 19 == 0:
-       dec.append(19)
-       num /= 19
-    while num % 23 ==0：
-       dec.append(23)
-       num /= 23
+    dec = []
+    x = 2
+    while x *2  <= num:
+        while num % x == 0:
+            dec.append(x)
+            num /= x
+        x += 1
     return dec
     
 
