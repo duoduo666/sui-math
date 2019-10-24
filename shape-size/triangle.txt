@@ -7,7 +7,7 @@ def expo(num,time):
            num *= y
         return num
         
-def fac(num):
+def fuc(num):
     if num < 0:
         return None
     elif num == 0:
@@ -22,19 +22,30 @@ def dev(fri,sec):
     return fri / sec
 
 def sin(angle):
-    angle = angle % 3.14
-    list1 = dev(expo(angle,1),fac(1))
-    list2 = dev(expo(angle,3),fac(3))
-    list3 = dev(expo(angle,5),fac(5))
-    list4 = dev(expo(angle,7),fac(7))
-    list5 = dev(expo(angle,9),fac(9))
-    list6 = dev(expo(angle,11),fac(11))
-    list7 = dev(expo(angle,13),fac(13))
-    list8 = dev(expo(angle,15),fac(15))
+    angle = angle % pi
+    list1 = dev(expo(angle,1),fuc(1))
+    list2 = dev(expo(angle,3),fuc(3))
+    list3 = dev(expo(angle,5),fuc(5))
+    list4 = dev(expo(angle,7),fuc(7))
+    list5 = dev(expo(angle,9),fuc(9))
+    list6 = dev(expo(angle,11),fuc(11))
+    list7 = dev(expo(angle,13),fuc(13))
+    list8 = dev(expo(angle,15),fuc(15))
     plus = list1 + list3 + list5 + list7
-    minus = list2 + list4 + list6 + list 8
-    if angle < 3.14 and angle > -3.14:
-        return plus - minus
-    else :
-        
-
+    minus = list2 + list4 + list6 + list8
+    return plus - minus
+    
+    
+def cos(angle):
+    angle = angle % pi
+    list1 = dev(expo(angle,2),fuc(2))
+    list2 = dev(expo(angle,4),fuc(4))
+    list3 = dev(expo(angle,6),fuc(6))
+    list4 = dev(expo(angle,8),fuc(8))
+    list5 = dev(expo(angle,10),fuc(10))
+    list6 = dev(expo(angle,12),fuc(12))
+    list7 = dev(expo(angle,14),fuc(14))
+    list8 = dev(expo(angle,16),fuc(16))
+    plus = list1 + list3 + list5 + list7
+    minus = list2 + list4 + list6 + list8
+    return 1 - plus + minus
