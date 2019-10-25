@@ -1,0 +1,6 @@
+#四则运算
+dev = lambda fri,sec : fri / sec
+plus = lambda fri,sec : fri + sec
+min = lambda fri,sec : fri - sec
+mut = lambda fri,sec : fri * sec
+

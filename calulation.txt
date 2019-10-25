@@ -1,0 +1,54 @@
+#阶乘
+def fuc(num):
+    if num == 1:
+        return num
+    else:
+        y=1
+        for i in range(1,num+1):
+          y *= i
+        return y
+#一个数的几次幂
+def expo(num,time):
+    if time == 1:
+        return num
+    else:
+        y =num
+        for i in range(1,time):
+           num *= y
+        return num
+#加减乘除
+dev = lambda fri,sec : fri / sec
+plus = lambda fri,sec : fri + sec
+min = lambda fri,sec : fri - sec
+mut = lambda fri,sec : fri * sec
+
+#算余数
+r_dev = lambda fri,sec : fri % sec
+#算整数部分
+o_dev = lambda fri,sec : fri // sec
+#算小数部分
+p_dev = lambda fri,sec : fri / sec - fri // sec
+#连加
+def m_plus(num):
+    if num == 1:
+       return 1
+    else:
+        x  = num
+        for i in range(num-1):
+            num += (x - 1)
+            x -= 1
+        return num
+import time
+#分解质因数
+def dec(num):
+    dec = []
+    x = 3
+    while num % 2 == 0:
+        dec.append(2)
+        num /= 2
+    while num >= x:
+       while num % x == 0:
+           dec.append(x)
+           num /= x
+       x += 2
+    return dec
