@@ -1,9 +1,9 @@
 #quad
-squad_size = lambda a,b : a * b
+squad = lambda a,b : a * b
 #triangle
-stri_size = lambda side,high : side * high / 2
+stri = lambda side,high : side * high / 2
 # trapezoid
-stra_size = lambda up,down,high : (up + down) * high/2
+stra = lambda up,down,high : (up + down) * high/2
 #circle
-pai = 3.141592653
-scir_size = lambda half :half * 2 * pai
+pi = 3.141592653
+scir = lambda half :half * 2 * pi
