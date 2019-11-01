@@ -29,34 +29,10 @@ r_dev = lambda fri,sec : fri % sec
 o_dev = lambda fri,sec : fri // sec
 #算小数部分
 p_dev = lambda fri,sec : fri / sec - fri // sec
-#连加
-def m_plus(num):
-    if num == 1:
-       return 1
-    else:
-        x  = num
-        for i in range(num-1):
-            num += (x - 1)
-            x -= 1
-        return num
-
-#分解质因数
-def dec(num):
-    dec = []
-    x = 3
-    while num % 2 == 0:
-        dec.append(2)
-        num /= 2
-    while num >= x:
-       while num % x == 0:
-           dec.append(x)
-           num /= x
-       x += 2
-    return dec
 
 #三角函数 sin   
 def sin(angle):
-    angle = angle % pi
+    angle = angle % (pi * 2)
     list1 = dev(expo(angle,1),fuc(1))
     list2 = dev(expo(angle,3),fuc(3))
     list3 = dev(expo(angle,5),fuc(5))
@@ -68,10 +44,9 @@ def sin(angle):
     plus = list1 + list3 + list5 + list7
     minus = list2 + list4 + list6 + list8
     return plus - minus
-    
-    
+
 def cos(angle):
-    angle = angle % pi
+    angle = angle % (pi * 2)
     list1 = dev(expo(angle,2),fuc(2))
     list2 = dev(expo(angle,4),fuc(4))
     list3 = dev(expo(angle,6),fuc(6))
@@ -82,9 +57,49 @@ def cos(angle):
     list8 = dev(expo(angle,16),fuc(16))
     plus = list1 + list3 + list5 + list7
     minus = list2 + list4 + list6 + list8
-    x = 1 - plus + minus
-    return x - x - x
-     
+    return 1 - plus + minus
+    
 def tan(angle):
-    x = (sin(angle) / cos(angle))
-    return x - x - x
+    return sin(angle) / cos(angle)
+   
+#反三角函数
+def asin(angle):
+    list1 = dev(expo(angle,3),6)
+    list2 = mut(dev(3,40),expo(angle,5))
+    list3 = mut(dev(5,221),expo(angle,7))
+    list4 = mut(dev(35,1152),expo(angle,9))
+    return angle + list1 + list2 + list3 + list4
+
+def atan(angle):
+    list1 = dev(expo(angle,3),3)
+    list2 = dev(expo(angle,5),5)
+    list3 = dev(expo(angle,7),7)
+    list4 = dev(expo(angle,9),9)
+    list5 = dev(expo(angle,11),11)
+    list6 = dev(expo(angle,13),13)
+    list7 = dev(expo(angle,15),15)
+    plus = list2 + list4 + list6 
+    minus = list1 + list3 + list5 + list7
+    return angle - minus + plus
+
+def acos(angle):
+    pass
+
+#正割(1/cos)
+def sec(angle):
+    list1 = dev(expo(angle,2),2)
+    list2 = mut(dev(5,24),expo(angle,4))
+    list3 = mut(dev(61,720),expo(angle,6))
+    return 1 + list1 + list2 + list3
+    #有错误
+ 
+#余割(1/sin)   
+def csc(angle):
+    angle = angle % pi 
+    list1 = angle / 6
+    list2 = mut(dev(7,360),expo(angle,3))
+    list3 = mut(dev(31,15120),expo(angle,5))
+    list4 = mut(dev(127,604800),expo(angle,7))
+    list5 = mut(dev(73,3421440),expo(angle,9))
+    list6 = mut(dev(1414477,65383718400),expo(angle,11))
+    return (1 / angle) + list1 + list2 + list3 + list4 + list5 + list6
