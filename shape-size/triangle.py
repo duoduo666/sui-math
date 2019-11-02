@@ -44,7 +44,8 @@ def sin(angle):
     plus = list1 + list3 + list5 + list7
     minus = list2 + list4 + list6 + list8
     return plus - minus
-
+    
+    
 def cos(angle):
     angle = angle % (pi * 2)
     list1 = dev(expo(angle,2),fuc(2))
@@ -83,7 +84,15 @@ def atan(angle):
     return angle - minus + plus
 
 def acos(angle):
-    pass
+    list1 = 1 / 2 * pi
+    list2 = dev(expo(angle,3),6)
+    list3 = mut(dev(3,40),expo(angle,5))
+    list4 = mut(dev(5,112),expo(angle,7))
+    list5 = mut(dev(35,1152),expo(angle,9))
+    if angle >= 1:
+       return 0
+    else:
+        return list1 - angle - list2 - list3 - list4 - list5
 
 #正割(1/cos)
 def sec(angle):
@@ -103,3 +112,6 @@ def csc(angle):
     list5 = mut(dev(73,3421440),expo(angle,9))
     list6 = mut(dev(1414477,65383718400),expo(angle,11))
     return (1 / angle) + list1 + list2 + list3 + list4 + list5 + list6
+#就是那个tan的倒数
+def cot(angle):
+    return cos(angle) / sin(angle)
