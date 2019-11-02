@@ -24,15 +24,26 @@ o_dev = lambda fri,sec : fri // sec
 p_dev = lambda fri,sec : fri / sec - fri // sec
 #连加
 def m_plus(num):
-    if num == 1:
-       return 1
-    else:
-        x  = num
-        for i in range(num-1):
-            num += (x - 1)
-            x -= 1
-        return num
-import time
+    x  = num
+    for i in range(num-1):
+        num += (x - 1)
+        x -= 1
+    return num
+    
+#从角度换弧度
+charc = lambda angle : angle * pi / 180
+
+#从弧度换角度
+def chang(arc):
+    return arc * 180 / pi
+
+#绝对值
+def modu(num):
+    if num < 0:
+       return num - num - num
+    elif num >= 0:
+       return num
+
 #分解质因数
 def dec(num):
     dec = []
