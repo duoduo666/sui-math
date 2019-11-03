@@ -23,13 +23,6 @@ plus = lambda fri,sec : fri + sec
 min = lambda fri,sec : fri - sec
 mut = lambda fri,sec : fri * sec
 
-#算余数
-r_dev = lambda fri,sec : fri % sec
-#算整数部分
-o_dev = lambda fri,sec : fri // sec
-#算小数部分
-p_dev = lambda fri,sec : fri / sec - fri // sec
-
 #三角函数 sin   
 def sin(angle):
     angle = angle % (pi * 2)
@@ -69,7 +62,10 @@ def asin(angle):
     list2 = mut(dev(3,40),expo(angle,5))
     list3 = mut(dev(5,221),expo(angle,7))
     list4 = mut(dev(35,1152),expo(angle,9))
-    return angle + list1 + list2 + list3 + list4
+    if angle >= 1:
+       return 0
+    else:
+        return angle + list1 + list2 + list3 + list4
 
 def atan(angle):
     list1 = dev(expo(angle,3),3)
@@ -81,8 +77,10 @@ def atan(angle):
     list7 = dev(expo(angle,15),15)
     plus = list2 + list4 + list6 
     minus = list1 + list3 + list5 + list7
-    return angle - minus + plus
-
+    if angle >= 1:
+        return 0
+    else:
+        return angle - minus + plus
 def acos(angle):
     list1 = 1 / 2 * pi
     list2 = dev(expo(angle,3),6)
@@ -99,12 +97,18 @@ def sec(angle):
     list1 = dev(expo(angle,2),2)
     list2 = mut(dev(5,24),expo(angle,4))
     list3 = mut(dev(61,720),expo(angle,6))
-    return 1 + list1 + list2 + list3
+    awn = 1 + list1 + list2 + list3
+    if awn > 3:
+        word = "it might be wrong \nbecause the number you type on sec is too large "
+        print(word)
+        return awn
+    elif awn <= 3:
+        return awn
     #有错误
- 
+
 #余割(1/sin)   
 def csc(angle):
-    angle = angle % pi 
+    angle = angle % pi
     list1 = angle / 6
     list2 = mut(dev(7,360),expo(angle,3))
     list3 = mut(dev(31,15120),expo(angle,5))
@@ -115,3 +119,41 @@ def csc(angle):
 #就是那个tan的倒数
 def cot(angle):
     return cos(angle) / sin(angle)
+
+#双面函数
+
+#sinh
+def sinh(angle):
+    list1 = dev(expo(angle,3),fuc(3))
+    list2 = dev(expo(angle,5),fuc(5))
+    list3 = dev(expo(angle,7),fuc(7))
+    list4 = dev(expo(angle,9),fuc(9))
+    list5 = dev(expo(angle,11),fuc(11))
+    list6 = dev(expo(angle,13),fuc(13))
+    list7 = dev(expo(angle,15),fuc(15))
+    list8 = dev(expo(angle,17),fuc(17))
+    list9 = dev(expo(angle,19),fuc(19))
+    list10 = dev(expo(angle,21),fuc(21))
+    return angle + list1 + list2 + list3 + list4 + list5 + list6 + list7 + list8 + list9 + list10
+
+#cosh
+def cosh(angle):
+    list1 = dev(expo(angle,2),fuc(2))
+    list2 = dev(expo(angle,4),fuc(4))
+    list3 = dev(expo(angle,6),fuc(6))
+    list4 = dev(expo(angle,8),fuc(8))
+    list5 = dev(expo(angle,10),fuc(10))
+    list6 = dev(expo(angle,12),fuc(12))
+    list7 = dev(expo(angle,14),fuc(14))
+    list8 = dev(expoelq(angle,16),fuc(16))
+    list9 = dev(expo(angle,18),fuc(18))
+    return 1 + list1 + list2 + list3 + list4 + list5 + list6 + list7 + list8 + list9
+   
+#tanh
+def tanh(angle):
+    list1 = dev(expo(angle,3),3)
+    list2 = mut(dev(2,15),expo(angle,5))
+    list3 = mut(dev(17,315),expo(angle,7))
+    list4 = mut(dev(62,2835),expo(angle,9))
+    list5 = mut(dev(1328,155925)expo)
+
