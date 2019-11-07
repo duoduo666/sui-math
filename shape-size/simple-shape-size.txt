@@ -1,9 +1,0 @@
-#quad
-squad = lambda a,b : a * b
-#triangle
-stri = lambda side,high : side * high / 2
-# trapezoid
-stra = lambda up,down,high : (up + down) * high/2
-#circle
-pi = 3.141592653
-scir = lambda half :half * 2 * pi
