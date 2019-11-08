@@ -1,3 +1,4 @@
+pi = 3.1415926535898
 #阶乘
 def fuc(num):
     if num == 1:
@@ -5,7 +6,7 @@ def fuc(num):
     else:
         y=1
         for i in range(1,num+1):
-          y *= i
+            y *= i
         return y
 #一个数的几次幂
 def expo(num,time):
@@ -14,14 +15,17 @@ def expo(num,time):
     else:
         y =num
         for i in range(1,time):
-           num *= y
+            num *= y
         return num
-#算余数
-r_dev = lambda fri,sec : fri % sec
+#余数
+def rdev(fri,sec):
+    return fri %sec
 #算整数部分
-o_dev = lambda fri,sec : fri // sec
+def odev(fri,sec):
+    return fri // sec
 #算小数部分
-p_dev = lambda fri,sec : fri / sec - fri // sec
+def pdev(fri,sec):
+    return fri / sec - fri // sec
 #连加
 def m_plus(num):
     x  = num
@@ -31,18 +35,19 @@ def m_plus(num):
     return num
     
 #从角度换弧度
-charc = lambda angle : angle * pi / 180
+def charc(angle):
+    return angle * pi / 180
 
 #从弧度换角度
 def chang(arc):
     return arc * 180 / pi
 
 #绝对值
-def modu(num):
+def abso(num):
     if num < 0:
-       return num - num - num
+        return num - num - num
     elif num >= 0:
-       return num
+        return num
 
 #分解质因数
 def dec(num):
@@ -52,8 +57,8 @@ def dec(num):
         dec.append(2)
         num /= 2
     while num >= x:
-       while num % x == 0:
-           dec.append(x)
-           num /= x
-       x += 2
+        while num % x == 0:
+            dec.append(x)
+            num /= x
+        x += 2
     return dec
