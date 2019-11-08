@@ -1,6 +1,9 @@
-#四则运算
-dev = lambda fri,sec : fri / sec
-plus = lambda fri,sec : fri + sec
-min = lambda fri,sec : fri - sec
-mut = lambda fri,sec : fri * sec
-
+#加减乘除
+def dev(fri,sec):
+    return fri / sec
+def plus(fri,sec):
+    return fri + sec
+def min(fri,sec):
+    return fri - sec
+def mut(fri,sec):
+    return fri * sec
