@@ -1,6 +1,6 @@
 pi = 3.1415926535898
-#阶乘
-def fuc(num):
+#阶乘（完美阶乘 10位数搓搓有余） 建议使用这个
+def fac(num):
     if num == 1:
         return num
     else:
@@ -8,6 +8,12 @@ def fuc(num):
         for i in range(1,num+1):
             y *= i
         return y
+#阶乘(最高到10000 10000以上无法算出)
+def fuc(num):
+    if num ==1:
+        return 1
+    return num * fuc(num - 1)
+
 #一个数的几次幂
 def expo(num,time):
     if time == 1:
@@ -36,7 +42,7 @@ def odev(fri,sec):
 def pdev(fri,sec):
     return fri / sec - fri // sec
 #连加
-def m_plus(num):
+def mplus(num):
     x  = num
     for i in range(num-1):
         num += (x - 1)
@@ -71,3 +77,35 @@ def dec(num):
             num /= x
         x += 2
     return dec
+
+#最小公倍数
+def lcm(num1,num2):
+    x = 2
+    lc = []
+    while num1 >= x and num2 >= x:
+        while num1 % x == 0 and num2 % x == 0:
+            lc.append(x)
+            num1 /= x
+            num2 /= x
+        x += 1
+    lc.append(num1)
+    lc.append(num2)
+    y = 1
+    for i in lc:
+        y *= i
+    return y
+    
+#最大公因数
+def mcf(num1,num2):
+    mc = []
+    x = 2
+    while num1 >= x and num2 >= x:
+        while num1 % x == 0 and num2 % x == 0:
+            mc.append(x)
+            num1 /= x
+            num2 /= x
+        x += 1
+    y = 1
+    for i in range mc:
+        y *= i
+    return y
