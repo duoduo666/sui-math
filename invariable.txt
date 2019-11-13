@@ -1,0 +1,24 @@
+def fac(num):
+    if num == 1:
+        return num
+    else:
+        y=1
+        for i in range(1,num+1):
+            y *= i
+        return y
+def expo(num,time):
+    if time == 1:
+        return num
+    else:
+        y =num
+        for i in range(1,time):
+            num *= y
+        return num
+#常数e
+def e(num=1):
+    x = 0
+    y = 2
+    for i in range(15):
+        x += (expo(num,y) / fac(y))
+        y += 1
+    return 1 + num + x
