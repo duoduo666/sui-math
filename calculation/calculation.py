@@ -1,4 +1,3 @@
-pi = 3.1415926535898
 #阶乘（完美阶乘 10位数搓搓有余） 建议使用这个
 def fac(num):
     if num == 1:
@@ -8,6 +7,8 @@ def fac(num):
         for i in range(1,num+1):
             y *= i
         return y
+    
+
 #阶乘(最高到10000 10000以上无法算出)
 def fuc(num):
     if num ==1:
@@ -106,6 +107,47 @@ def mcf(num1,num2):
             num2 /= x
         x += 1
     y = 1
-    for i in range mc:
+    for i in mc:
         y *= i
     return y
+
+#对数
+#ln
+def ln(num):
+    if num > 0 and num != 1 and num <= 100:
+        a = (num - 1) / (num + 1)
+        x = 0
+        for i in range(3,1001,2):
+            x += (expo(a,i) / i)
+        return 2 * (x + a)
+    elif num == 1:
+        return 0
+    elif num <= 0:
+        return "are you kidding me? the number you type in LN is smaller than 1!"
+    if num > 100:
+        return "the number you type in Ln is very big. please try 'bln' instead. \n But it might be slowly"
+
+def bln(num):
+    if num > 100 and num < 10000:
+        a = (num - 1) / (num + 1)
+        x = 0
+        for i in range(3,10001,2):
+            x += (expo(a,i) / i)
+        return 2 * (x + a)
+    elif num != 1 and num <= 100:
+        a = (num - 1) / (num + 1)
+        x = 0
+        for i in range(3,1001,2):
+            x += (expo(a,i) / i)
+        return 2 * (x + a)
+    elif num == 1:
+        return 0
+    elif num < 0:
+        return "are you kidding me? the number you type in LN is smaller than 1!"
+    elif num >= 10000:
+        a = (num - 1) / (num + 1)
+        x = 0
+        for i in range(3,50001,2):
+            x += (expo(a,i) / i)
+        return 2 * (x + a)
+
